@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basic Calculator</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  #calculator {
+    width: 500px;
+    height: 300px;
+    margin: 100px auto;
+    border: 2px solid #2c1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(217, 146, 158);
+  }
+  #colorButton {
+    padding: 10px 20px;
+    background-color: #435d41;
+    color: pink;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  #colorButton:hover {
+    background-color: rgb(165, 72, 202);
+  }
+</style>
+</head>
+<body>
+<div id="calculator">
+  <h1> Calculator</h1>
+  <br>
+  <button id="colorButton">               Cognifyz</button>
+  <br>
+  <br>
+  <input type="number" id="num1" placeholder="Enter number 1">
+  <input type="number" id="num2" placeholder="Enter number 2">
+  <br>
+  <br>
+  <button id="addButton">Submit</button>
+  <p id="result">Result: </p>
+</div>
+
+<script>
+  const addButton = document.getElementById('addButton');
+  addButton.addEventListener('click', () => {
+    const num1 = parseFloat(document.getElementById('num1').value);
+    const num2 = parseFloat(document.getElementById('num2').value);
+    const result = num1 + num2;
+    document.getElementById('result').textContent = `Result: ${result}`;
+    
+    alert(`The result of adding ${num1} and ${num2} is ${result}`);
+  });
+</script>
+</body>
+</html>
